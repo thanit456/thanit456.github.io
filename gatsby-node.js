@@ -17,7 +17,7 @@ exports.createPages = ({ actions }) => {
   paragraphs.forEach(paragraph => {
     createPage({
       path: `/paragraph/${paragraph._id}`,
-      component: require.resolve(`./src/templates/paragraph-templates.js`),
+      component: require.resolve(`./src/templates/paragraph-template.js`),
       context: { paragraph },
     })
   })

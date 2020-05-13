@@ -34,13 +34,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-theme-blog`,
       basePath: `/blog`,
       contentPath: `content/blogPosts`,
       assetPath: `content/blogAssets`,
       mdx: false,
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
     },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality

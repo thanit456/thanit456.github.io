@@ -1,25 +1,14 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 export default function About({ data }) {
   return (
     <Layout>
-      <h1>About {data.site.siteMetadata.title}</h1>
-      <p>
-        Experience: <br />
-        -Internship ...
-      </p>
+      <h1>About</h1>
+      <p>Experience:</p>
+      <br />
+      <p>-Internship</p>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    site {
-      siteMetaData {
-        title
-      }
-    }
-  }
-`
