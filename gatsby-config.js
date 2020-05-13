@@ -35,6 +35,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-theme-blog`,
+      basePath: `/blog`,
+      contentPath: `content/blogPosts`,
+      assetPath: `content/blogAssets`,
+      mdx: false,
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
