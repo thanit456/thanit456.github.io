@@ -1,7 +1,24 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = ({ actions }) => {
+  const { createPage } = actions
+  const paragraphs = [
+    {
+      _id: 1,
+      title: "How can computer see?",
+      content: "using Machine Learning such as CNN",
+    },
+    {
+      _id: 2,
+      title: "What's the big open-source of NLP?",
+      content:
+        "Hugging-face provides many models for NLP tasks in multilingual",
+    },
+  ]
 
-// You can delete this file if you're not using it
+  paragraphs.forEach(paragraph => {
+    createPage({
+      path: `/paragraph/${paragraph._id}`,
+      component: require.resolve(`./src/templates/paragraph-templates.js`),
+      context: { paragraph },
+    })
+  })
+}
